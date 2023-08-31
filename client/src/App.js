@@ -1,43 +1,20 @@
 import './App.css';
-
+import Post from './Post.js';
+import Header from './Header.js';
+import { Route, Routes } from 'react-router-dom';
+import Layout from './Layout';
+import IndexPage from './pages/IndexPage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 function App() {
   return (
-    <main>
-      <header>
-        <a href="" class="logo">CampusConnect</a>
-        <nav>
-          <a href="">Login</a>
-          <a href="">Register</a>
-        </nav>
-      </header>
-      <div class="post">
-        <div class="image">
-          <img src="https://images.indianexpress.com/2023/08/pulse-.jpg?w=640" alt="" />
-        </div>
-        <div class="texts">
-          <h2>Seat-sharing may wait, INDIA to put in place groups, structure at Mumbai meeting</h2>
-          <p>28 parties to meet, up from 26 in Bengaluru; parties cool to the idea of a convenor, apprehensive about rocking political equations</p>
-        </div>
-      </div>
-      <div class="post">
-        <div class="image">
-          <img src="https://images.indianexpress.com/2023/08/pulse-.jpg?w=640" alt="" />
-        </div>
-        <div class="texts">
-          <h2>Seat-sharing may wait, INDIA to put in place groups, structure at Mumbai meeting</h2>
-          <p>28 parties to meet, up from 26 in Bengaluru; parties cool to the idea of a convenor, apprehensive about rocking political equations</p>
-        </div>
-      </div>
-      <div class="post">
-        <div class="image">
-          <img src="https://images.indianexpress.com/2023/08/pulse-.jpg?w=640" alt="" />
-        </div>
-        <div class="texts">
-          <h2>Seat-sharing may wait, INDIA to put in place groups, structure at Mumbai meeting</h2>
-          <p>28 parties to meet, up from 26 in Bengaluru; parties cool to the idea of a convenor, apprehensive about rocking political equations</p>
-        </div>
-      </div>
-    </main>
+    <Routes>
+      <Route path = "/" element ={<Layout />}>
+        <Route index element={<IndexPage />} />
+        <Route path = '/login' element ={<LoginPage />} />
+        <Route path = '/register' element = {<RegisterPage />}/>
+      </Route>
+    </Routes>
   );
 }
 
